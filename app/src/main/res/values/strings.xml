@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CatSeeker</string>
+    <string name="softKitty">Soft kitty, warm kitty,\nlittle ball of fur!\nHappy kitty, sleepy kitty,\npurr purr purr!</string>
+    <string name="cats_for_life">Cats for life!</string>
+</resources>
