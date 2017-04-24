@@ -5,9 +5,12 @@ import com.emarsys.catseeker.model.CatMessageModel;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 interface SelinaService {
 
-    @POST("services/T4LT76Z1C/B520F9R29/nac4RzLaUILJ5AtT99mcdJuT")
-    Call<Void> postCat(@Body CatMessageModel catMessageModel);
+    @POST("services/{secret}")
+    Call<Void> postCat(
+            @Path(value = "secret", encoded = true) String secret,
+            @Body CatMessageModel catMessageModel);
 }

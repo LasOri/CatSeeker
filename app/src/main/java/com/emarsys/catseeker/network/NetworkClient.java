@@ -26,7 +26,7 @@ public class NetworkClient {
     // region Public methods
     public void postCatMessage(String message) {
         SelinaService selinaService = retrofit().create(SelinaService.class);
-        Call<Void> call = selinaService.postCat(new CatMessageModel(message));
+        Call<Void> call = selinaService.postCat(ApiSecretProvider.provideSecret(), new CatMessageModel(message));
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
