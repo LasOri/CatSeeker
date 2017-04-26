@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.emarsys.catseeker.ui.MainActivity">
+    tools:context="com.emarsys.catseeker.service.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -20,7 +20,7 @@
         android:layout_marginTop="46dp" />
 
     <Button
-        android:id="@+id/action"
+        android:id="@+id/catsForLife"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cats_for_life"
