@@ -1,18 +1,20 @@
 package com.emarsys.catseeker.model
 
+import android.app.Application
 import android.content.pm.PackageManager
-import com.emarsys.catseeker.CatSeekerApp
 
 object MetaData {
-    private val map: Map<String, Any> by lazy {
-        val metaData = CatSeekerApp.instance
-                .packageManager
-                .getApplicationInfo(CatSeekerApp.instance.packageName, PackageManager.GET_META_DATA)
-                .metaData
-
-        metaData.keySet()
-                .associate { it to metaData[it] }
-    }
+    private val map: MutableMap<String, Any> = mutableMapOf()
 
     val apiSecret: String by map
+
+    fun init(context: Application) {
+        val metaData = context
+                .packageManager
+                .getApplicationInfo(context.packageName, PackageManager.GET_META_DATA)
+                .metaData
+
+        map.putAll(metaData.keySet()
+                .associate { it to metaData[it] })
+    }
 }
